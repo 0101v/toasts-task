@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 const Portal = ({ children }) => {
   const modal = document.createElement("div");
-  modal.setAttribute('id');
+  modal.setAttribute('id', 'portal');
 
   React.useEffect(() => {
     document.body.appendChild(modal);

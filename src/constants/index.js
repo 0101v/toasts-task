@@ -2,10 +2,12 @@ import errorIcon from '../assets/ErrorIcon.svg';
 import infoIcon from '../assets/InfoIcon.svg';
 import successIcon from '../assets/SuccessIcon.svg';
 import warningIcon from '../assets/WarningIcon.svg';
+import close from "../assets/close.svg"
 
 export const INFO_TOAST = {
   TYPE: 'info',
   ICON: infoIcon,
+  CLOSE: close,
   TITLE: 'Info toast example',
   BACKGROUND_COLOR: '#9A40D3',
   COLOR: '#FFFFFF',
@@ -13,6 +15,7 @@ export const INFO_TOAST = {
 export const WARNING_TOAST = {
   TYPE: 'warning',
   ICON: warningIcon,
+  CLOSE: close,
   TITLE: 'Warning toast example',
   BACKGROUND_COLOR: '#F4E048',
   COLOR: '#000000',
@@ -20,6 +23,7 @@ export const WARNING_TOAST = {
 export const ERROR_TOAST = {
   TYPE: 'error',
   ICON: errorIcon,
+  CLOSE: close,
   TITLE: 'Error toast example',
   BACKGROUND_COLOR: '#E25837',
   COLOR: '#FFFFFF',
@@ -27,7 +31,27 @@ export const ERROR_TOAST = {
 export const SUCCESS_TOAST = {
   TYPE: 'success',
   ICON: successIcon,
+  CLOSE: close,
   TITLE: 'Success toast example',
   BACKGROUND_COLOR: '#37E29A',
   COLOR: '#FFFFFF',
 }
+
+export const TOAST_POSITIONS = {
+  ['top-right']: {
+    top: '12px',
+    rigth: "12px",
+  },
+  ['top-left']: {
+    top: '12px',
+    left: '12px',
+  },
+  ['bottom-right']: {
+    rigth: "12px",
+    bottom: '12px',
+  },
+  ['bottom-left']: {
+    bottom: '12px',
+    left: '12px',
+  },
+};
