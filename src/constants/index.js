@@ -47,11 +47,37 @@ export const TOAST_POSITIONS = {
     left: '12px',
   },
   ['bottom-right']: {
-    rigth: "12px",
+    rigth: '12px',
     bottom: '12px',
   },
   ['bottom-left']: {
     bottom: '12px',
     left: '12px',
+  }
+};
+export const TOAST_SIZE = {
+  ['small']: {
+    width: '250px',
+    height: '50px',
+    padding: '7px',
+    fontSize: '16px',
+    widthClose: '10px',
+    widthSvg: '30px',
   },
+  ['medium']: {
+    width: '300px',
+    height: '60px',
+    padding: '10px',
+    fontSize: '18px',
+    widthClose: '15px',
+    widthSvg: '35px',
+  },
+  ['large']: {
+    width: '350px',
+    height: '70px',
+    padding: '15px',
+    fontSize: '22px',
+    widthClose: '20px',
+    widthSvg: '40px',
+  }
 };
