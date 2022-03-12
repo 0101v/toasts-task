@@ -1,6 +1,6 @@
 import React from "react";
 
-import TestComponent from "../TestComponent/TestComponent";
+
 import { Toasts } from "../components/Toast";
 
 export default {
