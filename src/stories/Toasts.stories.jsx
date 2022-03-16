@@ -18,7 +18,6 @@ export default {
       },
     },
     toastAutoDelete: {
-      defaultValue: false,
       control: {
         type: 'boolean',
       },

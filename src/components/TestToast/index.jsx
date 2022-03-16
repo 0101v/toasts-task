@@ -16,12 +16,12 @@ const TestToast = (toastType,
 
   const toastSome = () => {
     toastStories.setContainer()
-    toastStories.addToast(toastType, size, title, titleColor, backgroundColor, toastAnimation)
+    toastStories.addToast(toastType, size, title, titleColor, backgroundColor, toastAnimation, toastAutoDelete, toastAutoDeleteTime)
   }
   return (
     <div>
       <Button onClick={toastSome}>toast</Button>
-      <ToastContainer toastPosition={toastPosition} toastAnimation={toastAnimation}/>
+      <ToastContainer toastPosition={toastPosition} />
     </div>
   )
 }

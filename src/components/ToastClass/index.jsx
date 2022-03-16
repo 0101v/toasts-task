@@ -15,8 +15,9 @@ class ToastClass {
   }
 
   addToast = (...arg) => {
-      const [toastType, size, title, titleColor, backgroundColor, toastAnimation] = arg;
-      
+      const [toastType, size, title, titleColor, backgroundColor, toastAnimation, toastAutoDelete, toastAutoDeleteTime] = arg;
+      const id = this.id;
+      if (toastAutoDelete) setTimeout(() => this.removeToast(id), toastAutoDeleteTime);
       this.pastToastType = toastType;  
       this.toastArrClass = getArrToast(this.toastArrClass, toastType, this.id, size,title,titleColor,backgroundColor, toastAnimation)
       this.id++;
