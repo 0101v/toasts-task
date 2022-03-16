@@ -2,7 +2,7 @@ import { INFO_TOAST, WARNING_TOAST, ERROR_TOAST, SUCCESS_TOAST } from "../consta
 import { hydrate } from "react-dom";
 import Toasts from "../components/Toast";
 
-export const getArrToast = (toastArrClass, toastType, id, size, title, titleColor, backgroundColor) => {
+export const getArrToast = (toastArrClass, toastType, id, size, title, titleColor, backgroundColor, toastAnimation) => {
   let type;
   switch (toastType) {
     case 'error':
@@ -21,25 +21,25 @@ export const getArrToast = (toastArrClass, toastType, id, size, title, titleColo
       console.log(toastType, 'Error')
       break;
   }
-  return [...toastArrClass, {...type, id, size, title, titleColor, backgroundColor}]
+  return [...toastArrClass, {...type, id, size, title, titleColor, backgroundColor, toastAnimation}]
 }
 
 export const renderToast = (element, container) => hydrate(element, container);
 
 export const getToast = (toastArrClass) => {
   return toastArrClass.map(el => {
-    console.log(el.size)
     return(
-    <Toasts
-      key={el.id}
-      id={el.id}
-      size={el.size || 'medium'}
-      title={el.title || el.TITLE}
-      titleColor={el.titleColor || el.COLOR}
-      backgroundColor={el.backgroundColor || el.BACKGROUND_COLOR}
-      close={el.CLOSE}
-      icon={el.ICON}
-      
-    />
+      <Toasts
+        key={el.id}
+        id={el.id}
+        size={el.size || 'medium'}
+        title={el.title || el.TITLE}
+        titleColor={el.titleColor || el.COLOR}
+        backgroundColor={el.backgroundColor || el.BACKGROUND_COLOR}
+        close={el.CLOSE}
+        icon={el.ICON}
+        toastAnimation={el.toastAnimation}
+
+      />
     )})
 }

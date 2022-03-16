@@ -1,4 +1,22 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const fromTopAnimation = keyframes`
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+`
+
+const fromBottomAnimation = keyframes`
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+`
 
 export const ToastElem = styled.div`
   position: relative;
@@ -10,6 +28,7 @@ export const ToastElem = styled.div`
   border-radius: 20px;
   background-color: ${(props) => props.backgroundColor};
   font-size: ${({size}) => size.fontSize};
+  animation: ${({toastAnimation}) => toastAnimation == 'from-top' ? fromTopAnimation : fromBottomAnimation} 1s;
 `
 export const ToastClose = styled.img`
   width: ${({size}) => size.widthClose};

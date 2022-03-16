@@ -40,7 +40,7 @@ export const SUCCESS_TOAST = {
 export const TOAST_POSITIONS = {
   ['top-right']: {
     top: '12px',
-    rigth: "12px",
+    rigth: '12px',
   },
   ['top-left']: {
     top: '12px',

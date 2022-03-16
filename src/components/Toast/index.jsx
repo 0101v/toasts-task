@@ -4,13 +4,14 @@ import { TOAST_SIZE } from "../../constants";
 import toastStories from "../ToastClass";
 
 
-const Toasts = ({id, size, title, titleColor, backgroundColor, close, icon}) => {
-  console.log(size)
+const Toasts = ({id, size, title, titleColor, backgroundColor, close, icon, toastAnimation}) => {
+
   return (
     <ToastElem
       key={id}
       backgroundColor={backgroundColor}
       size={TOAST_SIZE[size]}
+      toastAnimation={toastAnimation}
     >
       <ToastClose src={close} size={TOAST_SIZE[size]} id={id} onClick={e => toastStories.removeToast(e.target.id)}/>
       <ToastInfo>

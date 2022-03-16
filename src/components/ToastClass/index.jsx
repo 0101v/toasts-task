@@ -15,10 +15,10 @@ class ToastClass {
   }
 
   addToast = (...arg) => {
-      const [toastType, size, title, titleColor, backgroundColor] = arg;
-
+      const [toastType, size, title, titleColor, backgroundColor, toastAnimation] = arg;
+      
       this.pastToastType = toastType;  
-      this.toastArrClass = getArrToast(this.toastArrClass, toastType, this.id, size,title,titleColor,backgroundColor)
+      this.toastArrClass = getArrToast(this.toastArrClass, toastType, this.id, size,title,titleColor,backgroundColor, toastAnimation)
       this.id++;
     
     renderToast(getToast(this.toastArrClass), this.container) 
