@@ -2,7 +2,7 @@ import { INFO_TOAST, WARNING_TOAST, ERROR_TOAST, SUCCESS_TOAST } from "../consta
 import { hydrate } from "react-dom";
 import Toasts from "../components/Toast";
 
-export const getArrToast = (toastArrClass, toastType, id, size, title, titleColor, backgroundColor, toastAnimation) => {
+export const getArrToast = (toastArrClass, toastType, id, size, title, titleColor, backgroundColor, toastAnimation, intevalDeleteId) => {
   let type;
   switch (toastType) {
     case 'error':
@@ -21,14 +21,14 @@ export const getArrToast = (toastArrClass, toastType, id, size, title, titleColo
       console.log(toastType, 'Error')
       break;
   }
-  return [...toastArrClass, {...type, id, size, title, titleColor, backgroundColor, toastAnimation}]
+  return [...toastArrClass, {...type, id, size, title, titleColor, backgroundColor, toastAnimation, intevalDeleteId}]
 }
 
 export const renderToast = (element, container) => hydrate(element, container);
 
 export const getToast = (toastArrClass) => {
   return toastArrClass.map(el => {
-    return(
+    return ( 
       <Toasts
         key={el.id}
         id={el.id}
@@ -39,7 +39,7 @@ export const getToast = (toastArrClass) => {
         close={el.CLOSE}
         icon={el.ICON}
         toastAnimation={el.toastAnimation}
-
-      />
+        intevalDeleteId={el.intevalDeleteId}
+      /> 
     )})
 }

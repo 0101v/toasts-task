@@ -16,7 +16,7 @@ const TestToast = (toastType,
 
   const toastSome = () => {
     toastStories.setContainer()
-    toastStories.addToast(toastType, size, title, titleColor, backgroundColor, toastAnimation, toastAutoDelete, toastAutoDeleteTime)
+    toastStories.addToast(toastType, size, toastAutoDelete, toastAutoDeleteTime, title, titleColor, backgroundColor, toastAnimation)
   }
   return (
     <div>
