@@ -1,5 +1,6 @@
 import React from 'react'
 import { ToastContainer } from '../ToastContainer'
+import { Button } from './component';
 import toastStories from '../ToastClass'
 
 const TestToast = (toastType,
@@ -10,16 +11,17 @@ const TestToast = (toastType,
   title,
   titleColor,
   backgroundColor,
+  toastAnimation
   ) => {
 
   const toastSome = () => {
     toastStories.setContainer()
-    toastStories.addToast(toastType, size, title, titleColor, backgroundColor)
+    toastStories.addToast(toastType, size, toastAutoDelete, toastAutoDeleteTime, title, titleColor, backgroundColor, toastAnimation)
   }
   return (
     <div>
-      <button onClick={toastSome}>toast</button>
-      <ToastContainer toastPosition={toastPosition}/>
+      <Button onClick={toastSome}>toast</Button>
+      <ToastContainer toastPosition={toastPosition} />
     </div>
   )
 }

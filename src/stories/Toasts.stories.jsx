@@ -18,7 +18,6 @@ export default {
       },
     },
     toastAutoDelete: {
-      defaultValue: false,
       control: {
         type: 'boolean',
       },
@@ -53,6 +52,7 @@ export default {
     },
     toastAnimation: {
       options: ['from-top', 'from-bottom'],
+      defaultValue: 'from-top',
       control: {
         type: 'radio',
       },
@@ -74,4 +74,3 @@ export const Toast = ({toastType,toastPosition,toastAutoDelete,toastAutoDeleteTi
     toastAnimation
   )
 }
-

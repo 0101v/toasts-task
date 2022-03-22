@@ -15,16 +15,18 @@ class ToastClass {
   }
 
   addToast = (...arg) => {
-      const [toastType, size, title, titleColor, backgroundColor] = arg;
-
-      this.pastToastType = toastType;  
-      this.toastArrClass = getArrToast(this.toastArrClass, toastType, this.id, size,title,titleColor,backgroundColor)
+      const [toastType, size, toastAutoDelete, toastAutoDeleteTime, title, titleColor, backgroundColor, toastAnimation] = arg;
+      const id = this.id;
+      let intevalDeleteId;
+      if (toastAutoDelete) intevalDeleteId = setTimeout(() => this.removeToast(id), toastAutoDeleteTime || 3000);
+      this.toastArrClass = getArrToast(this.toastArrClass, toastType, this.id, size, title, titleColor, backgroundColor, toastAnimation, intevalDeleteId)
       this.id++;
     
     renderToast(getToast(this.toastArrClass), this.container) 
   }
-  removeToast = id => {
+  removeToast = (id, timeId, event) => {
     this.toastArrClass = this.toastArrClass.filter(el => el.id != id);
+    if (event == 'click' && timeId) clearInterval(timeId);
     renderToast(getToast(this.toastArrClass), this.container)
   }
    
